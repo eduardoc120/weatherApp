@@ -1,0 +1,71 @@
+#root {
+  max-width: 1280px;
+  text-align: center;
+  width: 100%;
+}
+
+.main-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 300px;
+  border-right: 1px solid;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.sidebar h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+.content {
+  flex: 1;
+}
+
+.cities {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 1.5rem;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.lang {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 2rem 2rem 0 2rem;
+}
+
+.upcoming-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 2rem 0 3rem 0;
+  border-bottom: 1px solid;
+}
+
+.upcoming-container > p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.next-hours-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  overflow: scroll;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.next-days-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}

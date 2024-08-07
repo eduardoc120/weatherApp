@@ -1,0 +1,16 @@
+.contact-form-container {
+  margin-top: 30px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 1.5rem;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.contact-form > button {
+  margin-top: 10px;
+}
