@@ -1,0 +1,89 @@
+$max-width-root: 1280px;
+$text-align-center: center;
+$sidebar-width: 300px;
+$sidebar-padding: 2rem;
+$border-color: #000;
+$font-size-sidebar-h3: 1.5rem;
+$padding-left-cities: 1.5rem;
+$gap-cities: 20px;
+$margin-top-cities: 30px;
+$gap-lang: 20px;
+$padding-lang: 2rem 2rem 0 2rem;
+$gap-upcoming: 30px;
+$padding-upcoming: 2rem 0 3rem 0;
+$font-size-upcoming: 1.1rem;
+$max-width-next-hours: 800px;
+$gap-next-hours: 30px;
+$gap-next-days: 40px;
+
+#root {
+  max-width: $max-width-root;
+  text-align: $text-align-center;
+  width: 100%;
+}
+
+.main-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: $sidebar-width;
+  border-right: 1px solid $border-color;
+  padding: $sidebar-padding;
+  box-sizing: border-box;
+
+  h3 {
+    margin: 0;
+    font-size: $font-size-sidebar-h3;
+    text-align: left;
+  }
+}
+
+.content {
+  flex: 1;
+}
+
+.cities {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: $padding-left-cities;
+  gap: $gap-cities;
+  margin-top: $margin-top-cities;
+}
+
+.lang {
+  display: flex;
+  justify-content: flex-end;
+  gap: $gap-lang;
+  padding: $padding-lang;
+}
+
+.upcoming-container {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-upcoming;
+  padding: $padding-upcoming;
+  border-bottom: 1px solid $border-color;
+
+  p {
+    font-size: $font-size-upcoming;
+    font-weight: 500;
+  }
+}
+
+.next-hours-cards {
+  display: flex;
+  justify-content: center;
+  gap: $gap-next-hours;
+  overflow: scroll;
+  max-width: $max-width-next-hours;
+  margin: 0 auto;
+}
+
+.next-days-cards {
+  display: flex;
+  justify-content: center;
+  gap: $gap-next-days;
+}

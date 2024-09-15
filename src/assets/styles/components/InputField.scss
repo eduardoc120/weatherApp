@@ -1,6 +1,8 @@
+$gap-input-container: 5px;
+
 .input-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 5px;
+  gap: $gap-input-container;
 }

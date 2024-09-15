@@ -1,0 +1,21 @@
+$margin-top-large: 30px;
+$margin-top-small: 10px;
+$gap: 20px;
+$padding-left: 1.5rem;
+
+.contact-form-container {
+  margin-top: $margin-top-large;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: $padding-left;
+  gap: $gap;
+  margin-top: $margin-top-large;
+
+  > button {
+    margin-top: $margin-top-small;
+  }
+}

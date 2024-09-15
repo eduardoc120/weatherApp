@@ -1,0 +1,14 @@
+$bg-color-hour-card: #646cff;
+$padding-hour-card: 1rem 2rem;
+$border-radius-hour-card: 10px;
+$max-width-img-hour-card: 50px;
+
+.hour-card {
+  background-color: $bg-color-hour-card;
+  padding: $padding-hour-card;
+  border-radius: $border-radius-hour-card;
+
+  img {
+    max-width: $max-width-img-hour-card;
+  }
+}

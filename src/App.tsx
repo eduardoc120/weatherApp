@@ -1,4 +1,4 @@
-import "./assets/styles/App.css";
+import "./assets/styles/App.scss";
 
 import { useState } from "react";
 
@@ -9,31 +9,26 @@ import { DayCard } from "./components/DayCard";
 import { useWeatherData } from "./hooks/useWeatherData";
 import { ContactForm } from "./components/ContactForm";
 
-
-const locations = ['Valencia', 'Alicante', 'Barcelona'];
-const langs = [
-  { code: 'en', label: 'English' },
-  { code: 'es', label: 'Español' },
-];
+import { Location, Lang, locations, langs } from './types';
 
 function App() {
-  const [location, setLocation] = useState("Valencia");
-  const [lang, setLang] = useState("en");
+  const [location, setLocation] = useState<Location>(locations[0]);
+  const [lang, setLang] = useState<Lang>(langs[0]);
   const { weatherData, nextHours, nextDays, error } = useWeatherData(location, lang);
 
-  const handleLangClick = (newLang) => {
-    if (lang === newLang) return;
+  const handleLangClick = (newLang: Lang) => {
+    if (lang.code === newLang.code) return;
     setLang(newLang);
   };
 
-  const handleLocationClick = (newLocation) => {
+  const handleLocationClick = (newLocation: Location) => {
     if (location === newLocation) return;
     setLocation(newLocation);
   };
 
-  const textNextHours = lang === 'en' ? `Next hours: `: `Próximas horas:`;
-  const textNextDays = lang === 'en' ? `Next days:` : `Próximos días:`;
-  const textLocations = lang === 'en' ? `Locations` : `Ciudades`;
+  const textNextHours = lang.code === 'en' ? `Next hours: `: `Próximas horas:`;
+  const textNextDays = lang.code === 'en' ? `Next days:` : `Próximos días:`;
+  const textLocations = lang.code === 'en' ? `Locations` : `Ciudades`;
 
   if (error) {
     return <div>Error: {error}</div>;
@@ -64,11 +59,11 @@ function App() {
       </aside>
       <main className="content">
         <div className="lang">
-          {langs.map(({ code, label }) => (
+          {langs.map(({ code, label }: Lang) => (
             <button
               key={code}
-              className={lang === code ? 'selected' : ''}
-              onClick={() => handleLangClick(code)}
+              className={lang.code === code ? 'selected' : ''}
+              onClick={() => handleLangClick({ code, label })}
             >
               {label}
             </button>
@@ -86,7 +81,7 @@ function App() {
           <section className="upcoming-container">
             <p>{textNextHours}</p>
             <div className="next-hours-cards">
-              {nextHours.map((hour) => (
+              {nextHours?.map((hour) => (
                 <HourCard
                   key={hour.dt}
                   dt={hour.dt}
@@ -100,7 +95,7 @@ function App() {
           <section className="upcoming-container">
             <p>{textNextDays}</p>
             <div className="next-days-cards">
-              {nextDays.map((day) => (
+              {nextDays?.map((day) => (
                 <DayCard
                   key={day.dt}
                   dt={day.dt}

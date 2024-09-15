@@ -1,0 +1,14 @@
+$bg-color-day-card: #646cff;
+$padding-day-card: 1rem 2rem;
+$border-radius-day-card: 10px;
+$max-width-img: 50px;
+
+.day-card {
+  background-color: $bg-color-day-card;
+  padding: $padding-day-card;
+  border-radius: $border-radius-day-card;
+
+  img {
+    max-width: $max-width-img;
+  }
+}
